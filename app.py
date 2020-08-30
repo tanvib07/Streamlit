@@ -3,11 +3,11 @@ import pandas as pd
 import numpy as np
 import pydeck as pdk
 import plotly.express as px
-
+from zipfile import ZipFile 
+zf = zipfile.ZipFile('Motor_Vehicle_Collisions_-_Crashes.zip') 
+df = pd.read_csv(zf.open('Motor_Vehicle_Collisions_-_Crashes.csv'))
 DATE_TIME = "date/time"
-DATA_URL = (
-    "https://data.ny.gov/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/data"
-)
+#DATA_URL = ( "https://data.ny.gov/Public-Safety/Motor-Vehicle-Collisions-Crashes/h9gi-nx95/data")
 
 st.title("Motor Vehicle Collisions in New York City")
 st.markdown("This application is a Streamlit dashboard that can be used "
